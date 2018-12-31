@@ -8,10 +8,12 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- endbuild -->
     <title>Ristorante Con Fusion</title>
     
     
@@ -32,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
                 </ul>
-                <span class="navbar-text"><a data-toggle="modal" data-target="#loginModal"><span class="fa fa-sign-in"></span> Login</a></span>
+                <span id="loginLink" class="navbar-text"><a><span class="fa fa-sign-in"></span> Login</a></span>
             </div>
         </div>
     </nav>
@@ -74,7 +76,7 @@
         </div>
     </div>
     
-    <div id="reservationModal" class="modal fade" role="dialog">
+    <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
                 <div class="modal-header">
@@ -142,8 +144,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-sm align-self-center">
-                    <a role="button" class="btn btn-block nav-link btn-warning"
-                        data-toggle="modal" data-target="#reservationModal">Reserve Table</a>
+                    <a id="reserveButton" role="button" class="btn btn-block nav-link btn-warning">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -255,46 +256,6 @@
                 </div>
             </div>
         </div>
-        <!---
-        <div class="row row-content align-items-center" id="ReserveJump">
-            <div class="col-sm col-md-8 offset-md-2">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-                    <div class="card-body">
-                        <form>
-                            <dl>
-                                <div class="form-group row">
-                                    <dt class="col-sm-12 col-md-2">Number of Guests</dt>
-                                    <dd class="col-sm-12 col-md-10">
-                                        <input type="radio" class="form-check-inline" name="radioinput">1
-                                        <input type="radio" class="form-check-inline" name="radioinput">2
-                                        <input type="radio" class="form-check-inline" name="radioinput">3
-                                        <input type="radio" class="form-check-inline" name="radioinput">4
-                                        <input type="radio" class="form-check-inline" name="radioinput">5
-                                        <input type="radio" class="form-check-inline" name="radioinput">6
-                                    </dd>
-                                </div>
-                                <div class="form-group row">
-                                    <dt class="col-sm-12 col-md-2">Date and Time</dt>
-                                    <dd class="col-sm-12 col-md-4">
-                                        <input type="text" class="form-control form-inline" name="date" placeholder="Date">
-                                    </dd>
-                                    <dd class="col-sm-12 col-md-4">
-                                        <input type="text" class="form-control form-inline" name="time" placeholder="Time">
-                                    </dd>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="offset-md-2 col-md-10">
-                                        <button type="submit" class="btn btn-primary">Reserve</button>
-                                    </div>
-                                </div>
-                            </dl>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        --->
     </div>
 
     <footer class="footer">
@@ -339,27 +300,12 @@
         </div>
     </footer>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/mains.js -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('#mycarousel').carousel({interval: 2000});
-            $('#carouselButton').click(function(){
-                if($('#carouselButton').children('span').hasClass('fa-pause')){
-                    $('#mycarousel').carousel('pause');
-                    $('#carouselButton').children('span').removeClass('fa-pause');
-                    $('#carouselButton').children('span').addClass('fa-play');
-                }
-                else if($('#carouselButton').children('span').hasClass('fa-play')){
-                    $('#mycarousel').carousel('cycle');
-                    $('#carouselButton').children('span').removeClass('fa-play');
-                    $('#carouselButton').children('span').addClass('fa-pause');
-                }
-            });
-            
-        })
-    </script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>
